@@ -35,6 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="MapsSQlite\User.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="SmartSqlMapConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

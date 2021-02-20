@@ -24,7 +24,7 @@ namespace SmartSql.Sample.AspNetCore.Controllers
             _userService = userService;
         }
 
-        // GET api/values
+        // GET api/values  
         [HttpPost]
         public long AddWithTranWrap([FromBody] User user)
         {

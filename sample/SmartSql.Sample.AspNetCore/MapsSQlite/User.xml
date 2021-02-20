@@ -40,7 +40,7 @@
         </Statement>
 
 
-        <!--新增select last_insert_rowid() from T_User-->
+        <!--新增-->
         <Statement Id="Insert">
 			INSERT INTO T_User
 			(
@@ -52,7 +52,7 @@
 			@UserName,
 			@Status
 			)
-			;select max(id) from T_User
+			;select last_insert_rowid() from T_User
 		</Statement>
 
         <!--删除-->
@@ -106,15 +106,15 @@
             <Include RefId="QueryParams"/>
         </Statement>
 
-        <!--获取表映射实体Limit 1-->
+        <!--获取表映射实体-->
         <Statement Id="GetEntity">
-            Select top 1 T.* From T_User T
+            Select T.* From T_User T
             <Where Min="1">
                 <IsNotEmpty Prepend="And" Property="Id">
                     T.Id=@Id
                 </IsNotEmpty>
             </Where>
-           
+            Limit 1
         </Statement>
 
 
